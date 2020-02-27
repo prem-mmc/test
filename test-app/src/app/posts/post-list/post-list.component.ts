@@ -26,6 +26,7 @@ constructor(public postsService: PostsService) {}
       this.postsSub = this.postsService.getPostUpdatedListener()
         .subscribe((posts: Post[]) => {
             this.posts = posts;
+            // console.log("new", this.posts[6]);
         });
     }
 
@@ -38,3 +39,4 @@ constructor(public postsService: PostsService) {}
     }
 
 }
+

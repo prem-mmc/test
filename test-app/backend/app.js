@@ -11,8 +11,6 @@ const app = express();
 const app1 = express();
 
 
-
-
 mongoose.connect("mongodb+srv://prem:U6IPYr2mjoPWel26@cluster0-todbc.mongodb.net/node?retryWrites=true&w=majority")
 .then(() => {
     console.log('Connected to DB!');
@@ -40,13 +38,72 @@ app.post("/api/posts", (req, res, next) => {
     post.save().then(createdPost => {
         res.status(201).json({
             message: 'post added successfully',
-            postId: createdPost._id
+            postId: createdPost._id,
+           
     });
-    // console.log(post);
-   
+    newMail() //calling nodemailer
+     console.log("test",post.title);
+     
+function newMail() {
+
+    //nodemailer code
+    app1.set('view engine', 'ejs');  
+    app1.listen(3001, function() {
+        console.log("Listening on 3000");
+         sendMail((err,info)=>{
+               console.log(info)
+           });
+      });
+     
+     app1.get('/', function (req, res) {
+       res.send('Hello World!')
+     });
+    
+    const sendMail = (cb) => {
+      
+        // Create a SMTP transporter object
+        let transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+                user: 'premchandran563@gmail.com',
+                pass:  'personalacc'
+            }
+        });
+        //let poolConfig = 'smtp://virender.nehra@causeway.com:10101989\@Cc@192.168.76.5/?pool=true';
+        //  let transporter = nodemailer.createTransport(poolConfig);        	          
+        // Message object
+        console.log('new', Post.find().title);
+        let message = {
+           
+            from: 'premchandran563@gmail.com',
+    
+            // Comma separated list of recipients
+            to: 'premchandran563@gmail.com',
+            subject: 'Subject of the message', //Subject of the message
+            UserName: 'prem',
+            HISTORY: post.title,
+            PHYSICAL: post.content,
+            Message: 'Hi this is test project to send mail with ejs template.'
+            
+        };
+         var filePath = './views/test.ejs';
+         var compiled = ejs.compile(fs.readFileSync(filePath, 'utf8'));
+         message.html = compiled(message);
+        transporter.sendMail(message, (error, info) => {
+            console.log(error);
+            if (error) {
+               cb(error.message,null);
+            }
+            cb(null,info);
+            transporter.close();
+        });
+    };
+    
+    }
+    
     });
 })
-console.log("test",this.post);
+
 
 app.get('/api/posts', (req, res, next) => {
 //    const posts = [
@@ -62,10 +119,10 @@ Post.find()
     res.status(200).json(
         {
             message:'post fetched successfully',
-            posts: documents
+            posts: documents  // posts.title
         });
         // var sam = "working";
-        // res.render("html.ejs", {thingvar: "working"});
+        // res.render("test.ejs", {thingvar: "working"});
         // console.log("this is test:", sam);
     });
    
@@ -85,58 +142,6 @@ app.delete("/api/posts/:id", (req, res, next) => {
     // console.log(req.params.id);
     // res.status(200).json({ message: "Post deleted" });
 });
-
-
-//nodemailer code
-app1.set('view engine', 'ejs');  
-app1.listen(3001, function() {
-    console.log("Listening on 3000");
-     sendMail((err,info)=>{
-           console.log(info)
-       });
-  });
- 
- app1.get('/', function (req, res) {
-   res.send('Hello World!')
- });
-
-const sendMail = (cb) => {
-  
-	// Create a SMTP transporter object
-	let transporter = nodemailer.createTransport({
-	    service: 'gmail',
-	    auth: {
-	        user: 'premchandran563@gmail.com',
-	        pass:  'personalacc'
-	    }
-	});
-	//let poolConfig = 'smtp://virender.nehra@causeway.com:10101989\@Cc@192.168.76.5/?pool=true';
-    //  let transporter = nodemailer.createTransport(poolConfig);        	          
-	// Message object
-	let message = {
-
-		from: 'premchandran563@gmail.com',
-
-	    // Comma separated list of recipients
-	    to: 'premchandran563@gmail.com',
-	    subject: 'Subject of the message', //Subject of the message
-        UserName: 'prem',
-	    FullName: 'premchandran',
-	    Message: 'Hi this is test project to send mail with ejs template.'
-	    
-	};
-	 var filePath = './views/test.ejs';
-	 var compiled = ejs.compile(fs.readFileSync(filePath, 'utf8'));
-	 message.html = compiled(message);
-	transporter.sendMail(message, (error, info) => {
-		console.log(error);
-	    if (error) {
-	       cb(error.message,null);
-	    }
-	    cb(null,info);
-	    transporter.close();
-	});
-};
 
 
 
