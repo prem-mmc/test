@@ -3,13 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve|nodemon server.js/",
+    "start": "node ./bin/www|ng serve|nodemon server.js/",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "start:server": "ng serve && nodemon server.js"
-    
   },
   "private": true,
   "dependencies": {
@@ -25,9 +24,16 @@
     "@angular/router": "~9.0.1",
     "body-parser": "^1.19.0",
     "concurrently": "^5.1.0",
+    "cookie-parser": "^1.4.4",
+    "ejs": "^2.7.4",
+    "email-templates-v2": "^2.0.3",
     "express": "^4.17.1",
+    "fs": "0.0.1-security",
     "mongoose": "^5.9.1",
+    "morgan": "^1.9.1",
+    "nodemailer": "^2.7.2",
     "rxjs": "~6.5.4",
+    "serve-favicon": "^2.5.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
   },
