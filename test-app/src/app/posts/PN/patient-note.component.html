@@ -58,19 +58,224 @@
                                 matInput rows="6" 
                                 name="title"
                               ngModel
-                              required
+                              
                               #title="ngModel"></textarea>
                                
+                                <!-- <textarea siInput [(ngModel)]="myTextarea" style="resize:none;  white-space: both;" rows="20" (keyup)="onKeyAction()" (keydown)="onKeyAction()" id="textID" maxlength="{{maxTextAreaLength}}"></textarea> -->
+                            </div>
+                            
+
+                            <div class="col-md-12  pt-5">
+                                <h3><b>Physical Examination</b> : Describe the history you just obtained from this patient. Include only information (pertinent positives and negatives) relevant to this patient's problem(s)</h3>
+                            </div>
+                            <div class="col-md-12 col-md-12  col-xs-12">
+                                <!-- <textarea rows="7" #mytxt id="ta" name="title" cols="70" maxcols="70" maxrows="7" maxlength="950"></textarea> -->
+                                <!-- <textarea name="mytexthistory" id="mytexthistory" cols="70" rows="7" maxlength="950" class="patienthistory"></textarea> -->
+                                
                                 <textarea
                                 matInput rows="6" 
                                 name="content"
                               ngModel
-                              required
+                              
                               #content="ngModel"></textarea>
                                 <!-- <textarea siInput [(ngModel)]="myTextarea" style="resize:none;  white-space: both;" rows="20" (keyup)="onKeyAction()" (keydown)="onKeyAction()" id="textID" maxlength="{{maxTextAreaLength}}"></textarea> -->
                             </div>
+                            <div class="col-md-12 col-md-12 col-xs-12 pt-3 ">
+                                <h3>
+                                    <b> DATA INTERPRETATION </b>: Based on what you have learned from the history and the physical examination, list up to 3 diagnoses that might explain this patient's complaint(s). List your diagnoses from most to least
+                                    likely. For some cases, fewer than 3 diagnoses will be appropriate. Then, enter the positive or negative findings from the history and the physical examination (if present) that support each diagnosis. Lastly, list
+                                    initial diagnostic studies (if any) you would order for each listed diagnosis (e.g. restricted physical exam maneuvers, laboratory tests, imaging, ECG, etc)</h3>
+                            </div>
+
+
+                            <div class="col-md-12 ">
+                                <div class="blocks ">
+                                    <div class="list list_1 ">
+                                        <div class="col-md-12 col-md-3 col-xs-3 ">
+                                            <h4>Diagnosis #<span class="changeNo ">1</span></h4>
+                                            <!-- <input name="diag_title_1 "  maxlength="100 " id="diag_title_1 " class="diag_title " type="text " value=" " autocomplete="off "> -->
+                                            <input type="text"
+                                            matInput rows="6" 
+                                            name="diag"
+                                          ngModel
+                                          
+                                          #diag="ngModel">
+                                        </div>
+                                        <div class="container col-12 m-0 ">
+                                            <div class="row no-gutters d-xs-none justify-content-between ">
+
+                                                <div class="col-md-5 mx-1 col-md-3 col-xs-3 m-0 ">
+                                                    <h4>History Finding(s)</h4>
+                                                    <!-- <input name="his_fin_1_1 "  maxlength="80 " id="his_find_1_1 " type="text " matInput rows="6"   ngModel  required #his_fin_1_1="ngModel" value=" " autocomplete="off "> -->
+                                                    <!-- <input name="his_fin_1_2 "  maxlength="80 " id="his_find_1_2 " type="text " value=" " autocomplete="off ">
+                                                    <input name="his_fin_1_3 "  maxlength="80 " id="his_find_1_3 " type="text " value=" " autocomplete="off "> -->
+                                                    <!-- <input matInput rows="6"  name="his " ngModel maxlength="80 "  #his="ngModel" id="his_find_1_3 " type="text " value=" " autocomplete="off "> -->
+                                                    <input name="his_fin_1_1" type="text" matInput rows="6"   ngModel   #his_fin_1_1="ngModel" maxlength="80" autocomplete="off ">
+                                                    <input name="his_fin_1_2" type="text" matInput rows="6"   ngModel   #his_fin_1_2="ngModel" maxlength="80" autocomplete="off ">
+                                                    <input name="his_fin_1_3" type="text" matInput rows="6"   ngModel   #his_fin_1_3="ngModel" maxlength="80" autocomplete="off ">
+
+                                                  
+                                                </div>
+
+                                                <div class="col-md-5 mx-1 col-md-3 col-xs-3 m-0 ">
+                                                    <h4>Physical Exam Finding(s)</h4>
+                                                    <input name="phy_ex_1_1"  type="text" matInput rows="6"   ngModel   #phy_ex_1_1="ngModel" maxlength="80" autocomplete="off ">
+                                                    <input name="phy_ex_1_2"  type="text" matInput rows="6"   ngModel   #phy_ex_1_2="ngModel" maxlength="80" autocomplete="off ">
+                                                    <input name="phy_ex_1_3"  type="text" matInput rows="6"   ngModel   #phy_ex_1_3="ngModel" maxlength="80" autocomplete="off ">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            
+                            <div class="col-md-12 ">
+                                <div class="blocks ">
+                                    <div class="list list_1 ">
+                                        <div class="col-md-12 col-md-3 col-xs-3 ">
+                                            <h4>Diagnosis #<span class="changeNo ">2</span></h4>
+                                            <!-- <input name="diag_title_1 "  maxlength="100 " id="diag_title_1 " class="diag_title " type="text " value=" " autocomplete="off "> -->
+                                            <input type="text"
+                                            matInput rows="6" 
+                                            name="diag2"
+                                          ngModel
+                                          
+                                          #diag2="ngModel">
+                                        </div>
+                                        <div class="container col-12 m-0 ">
+                                            <div class="row no-gutters d-xs-none justify-content-between ">
+
+                                                <div class="col-md-5 mx-1 col-md-3 col-xs-3 m-0 ">
+                                                    <h4>History Finding(s)</h4>
+                                                    <!-- <input name="his_fin_1_1 "  maxlength="80 " id="his_find_1_1 " type="text " matInput rows="6"   ngModel  required #his_fin_1_1="ngModel" value=" " autocomplete="off "> -->
+                                                    <!-- <input name="his_fin_1_2 "  maxlength="80 " id="his_find_1_2 " type="text " value=" " autocomplete="off ">
+                                                    <input name="his_fin_1_3 "  maxlength="80 " id="his_find_1_3 " type="text " value=" " autocomplete="off "> -->
+                                                    <!-- <input matInput rows="6"  name="his " ngModel maxlength="80 "  #his="ngModel" id="his_find_1_3 " type="text " value=" " autocomplete="off "> -->
+                                                    <input name="his_fin_2_1" type="text" matInput rows="6"   ngModel   #his_fin_2_1="ngModel" maxlength="80" autocomplete="off ">
+                                                    <input name="his_fin_2_2" type="text" matInput rows="6"   ngModel   #his_fin_2_2="ngModel" maxlength="80" autocomplete="off ">
+                                                    <input name="his_fin_2_3" type="text" matInput rows="6"   ngModel   #his_fin_2_3="ngModel" maxlength="80" autocomplete="off ">
+
+                                                  
+                                                </div>
+
+                                                <div class="col-md-5 mx-1 col-md-3 col-xs-3 m-0 ">
+                                                    <h4>Physical Exam Finding(s)</h4>
+                                                    <input name="phy_ex_2_1"  type="text" matInput rows="6"   ngModel   #phy_ex_2_1="ngModel" maxlength="80" autocomplete="off ">
+                                                    <input name="phy_ex_2_2"  type="text" matInput rows="6"   ngModel   #phy_ex_2_2="ngModel" maxlength="80" autocomplete="off ">
+                                                    <input name="phy_ex_2_3"  type="text" matInput rows="6"   ngModel   #phy_ex_2_3="ngModel" maxlength="80" autocomplete="off ">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-12 ">
+                                <div class="blocks ">
+                                    <div class="list list_1 ">
+                                        <div class="col-md-12 col-md-3 col-xs-3 ">
+                                            <h4>Diagnosis #<span class="changeNo ">3</span></h4>
+                                            <!-- <input name="diag_title_1 "  maxlength="100 " id="diag_title_1 " class="diag_title " type="text " value=" " autocomplete="off "> -->
+                                            <input type="text"
+                                            matInput rows="6" 
+                                            name="diag3"
+                                          ngModel
+                                          
+                                          #diag3="ngModel">
+                                        </div>
+                                        <div class="container col-12 m-0 ">
+                                            <div class="row no-gutters d-xs-none justify-content-between ">
+
+                                                <div class="col-md-5 mx-1 col-md-3 col-xs-3 m-0 ">
+                                                    <h4>History Finding(s)</h4>
+                                                    <!-- <input name="his_fin_1_1 "  maxlength="80 " id="his_find_1_1 " type="text " matInput rows="6"   ngModel  required #his_fin_1_1="ngModel" value=" " autocomplete="off "> -->
+                                                    <!-- <input name="his_fin_1_2 "  maxlength="80 " id="his_find_1_2 " type="text " value=" " autocomplete="off ">
+                                                    <input name="his_fin_1_3 "  maxlength="80 " id="his_find_1_3 " type="text " value=" " autocomplete="off "> -->
+                                                    <!-- <input matInput rows="6"  name="his " ngModel maxlength="80 "  #his="ngModel" id="his_find_1_3 " type="text " value=" " autocomplete="off "> -->
+                                                    <input name="his_fin_3_1" type="text" matInput rows="6"   ngModel   #his_fin_3_1="ngModel" maxlength="80" autocomplete="off ">
+                                                    <input name="his_fin_3_2" type="text" matInput rows="6"   ngModel   #his_fin_3_2="ngModel" maxlength="80" autocomplete="off ">
+                                                    <input name="his_fin_3_3" type="text" matInput rows="6"   ngModel   #his_fin_3_3="ngModel" maxlength="80" autocomplete="off ">
+
+                                                  
+                                                </div>
+
+                                                <div class="col-md-5 mx-1 col-md-3 col-xs-3 m-0 ">
+                                                    <h4>Physical Exam Finding(s)</h4>
+                                                    <input name="phy_ex_3_1"  type="text" matInput rows="6"   ngModel   #phy_ex_3_1="ngModel" maxlength="80" autocomplete="off ">
+                                                    <input name="phy_ex_3_2"  type="text" matInput rows="6"   ngModel   #phy_ex_3_2="ngModel" maxlength="80" autocomplete="off ">
+                                                    <input name="phy_ex_3_3"  type="text" matInput rows="6"   ngModel   #phy_ex_3_3="ngModel" maxlength="80" autocomplete="off ">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-12 ">
+                                <div class="blocks ">
+                                    <div class="list list_1 ">
+                                        <div class="col-md-12 col-md-3 col-xs-3 ">
+                                            <h4>Diagnosis Study<span class="changeNo "></span></h4>
+                                            <!-- <input name="diag_title_1 "  maxlength="100 " id="diag_title_1 " class="diag_title " type="text " value=" " autocomplete="off "> -->
+                                            
+                                        </div>
+                                        <div class="container col-12 m-0 ">
+                                            <div class="row no-gutters d-xs-none justify-content-between ">
+
+
+                                                <div class="col-md-5 mx-1 col-md-3 col-xs-3 m-0 ">
+                                                   
+                                                    <input name="diag_study1"  type="text" matInput rows="6"   ngModel   #diag_study1="ngModel" maxlength="80" autocomplete="off ">
+                                                    <input name="diag_study2"  type="text" matInput rows="6"   ngModel   #diag_study2="ngModel" maxlength="80" autocomplete="off ">
+                                                    <input name="diag_study3"  type="text" matInput rows="6"   ngModel   #diag_study3="ngModel" maxlength="80" autocomplete="off ">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 ">
+                                <div class="blocks ">
+                                    <div class="list list_1 ">
+                                        <div class="col-md-12 col-md-3 col-xs-3 ">
+                                            <h4>Email<span class="changeNo "></span></h4>
+                                            <!-- <input name="diag_title_1 "  maxlength="100 " id="diag_title_1 " class="diag_title " type="text " value=" " autocomplete="off "> -->
+                                            
+                                        </div>
+                                        <div class="container col-12 m-0 ">
+                                            <div class="row no-gutters d-xs-none justify-content-between ">
+
+
+                                                <div class="col-md-5 mx-1 col-md-3 col-xs-3 m-0 ">
+                                                   
+                                                    <input name="email"  type="email" matInput rows="6"   ngModel   #email="ngModel" maxlength="80" autocomplete="off ">
+                                                  
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="list-updown col-md-12 col-sm-3 col-xs-3 ">
+                                <a href=" " title="Up " class="btn blue btn-lg text-light "><span ><svg  width="20px " height="20px ">
+                                    <path style="fill:rgb(247, 248, 246); " d="M16.791,13.254c0.444-0.444,1.143-0.444,1.587,0c0.429,0.444,0.429,1.143,0,1.587l-6.65,6.651 c-0.206,0.206-0.492,0.333-0.809,0.333c-0.317,0-0.603-0.127-0.81-0.333l-6.65-6.651c-0.444-0.444-0.444-1.143,0-1.587
+                                    s1.143-0.444,1.587,0l4.746,4.762V1.111C9.791,0.492,10.299,0,10.918,0c0.619,0,1.111,0.492,1.111,1.111v16.904L16.791,13.254z "/>
+                                 
+                                    </svg></span></a>
+                                <a href=" " title="Add a Row " class="btn blue btn-lg text-light " data-rowid="1 " data-rowcount="3 ">Add a Row</a>
+                            </div>
+                            
                             </div>
                             </div>
+                            
                             <button
                             mat-raised-button 
                             color="accent"
