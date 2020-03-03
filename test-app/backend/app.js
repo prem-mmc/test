@@ -108,7 +108,7 @@ function newMail() {
     
             // Comma separated list of recipients
             to: post.email,
-            subject: 'Subject of the message', //Subject of the message
+            subject: 'Target USMLE support', //Subject of the message
             UserName: 'prem',
             HISTORY: post.title,
             PHYSICAL: post.content,

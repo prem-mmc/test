@@ -30,4 +30,6 @@ diag_study1 : string;
 diag_study2 : string;
 diag_study3 : string;
 
+email : string;
+
 }
